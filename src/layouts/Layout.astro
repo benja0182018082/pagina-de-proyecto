@@ -106,9 +106,13 @@ const { title } = Astro.props as Props;
 		</header>
 		<h1>Red Zone</h1>
 		<h3>by b.s.b.</h3>
-		<h1>_____________________________________________________________</h1>
-		<img src="/VS_The_Beast.webp" height="500px" width="400" />
-		<h1>_____________________________________________________________</h1>
+		<img
+			class="centrada"
+			src="/VS_The_Beast.webp"
+			height="500px"
+			width="400"
+		/>
+
 		<div class="logo3">
 			<a
 				href="https://lab-redes-benja.vercel.app/"
@@ -121,9 +125,96 @@ const { title } = Astro.props as Props;
 			</a>
 		</div>
 	</body>
+	<html>
+		<head>
+			<title>Formulario de contacto</title>
+		</head>
+		<body>
+			<div class="contenedor">
+				<p>formulario de contacto</p>
+			</div>
+			<form action="/procesar-formulario" method="POST">
+				<form>
+					<div class="form-group">
+						<label for="nombre">Nombre:</label>
+						<input type="text" id="nombre" name="nombre" />
+					</div>
+				</form>
+				<form>
+					<div class="form-group">
+						<label for="apellido">apellido:</label>
+						<input type="text" id="apellido" name="apellido" />
+					</div>
+				</form>
+				<form>
+					<div class="form-group">
+						<label for="email">email:</label>
+						<input type="text" id="email" name="email" />
+					</div>
+				</form>
+				<div class="contenedor">
+					<p>mensaje:</p>
+				</div>
+				<form>
+					<div class="form-group">
+						<textarea
+							id="mensaje"
+							name="mensaje"
+							rows="4"
+							resize="vertical"></textarea>
+					</div>
+				</form>
+
+				<div class="form-container">
+					<form>
+						<!-- Tus campos de formulario aquí -->
+						<button type="submit" class="submit-button"
+							>Enviar</button
+						>
+					</form>
+				</div>
+			</form>
+		</body>
+	</html>
+
 	<slot />
 
 	<style>
+		.contenedor {
+			text-align: center;
+		}
+		textarea {
+			width: 300px;
+			padding: 5px;
+			border: 1px solid gray;
+			resize: vertical;
+		}
+		form {
+			margin: 0 auto; /* Establece los márgenes izquierdo y derecho automáticos para centrar el formulario */
+			text-align: center; /* Alinea los elementos del formulario al centro */
+		}
+		form {
+			max-width: 500px; /* Establece un ancho máximo de 500px para el formulario */
+		}
+		form input,
+		form textarea {
+			margin-bottom: 10px; /* Añade un margen inferior de 10px a los campos de entrada y áreas de texto */
+		}
+		input[type="text"] {
+			width: 200px; /* Establece un ancho de 200px para el campo de entrada de texto */
+		}
+		button {
+			text-align: center; /* Alinea el contenido del botón al centro */
+		}
+		img {
+			width: 300px; /* Establece un ancho de 300px para la imagen */
+			height: auto; /* Mantiene la proporción original de la imagen ajustando automáticamente la altura */
+		}
+		.centrada {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
 		#gif {
 			width: 20px;
 			height: 100px; /*tamaño de la pagina*/
@@ -136,7 +227,7 @@ const { title } = Astro.props as Props;
 			background-image: url(/96088567-fondo-borroso-violeta-abstracto-color-de-textura-suave-degradado-ilustración-vectorial-patrón-de.webp);
 			background-size: cover;
 			background-repeat: no-repeat;
-			height: 100vh;
+			height: 150vh;
 			/*asta aca termina*/
 		}
 		.logo {
